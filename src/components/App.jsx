@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 
 
 function App() {
-  const [contacts, setContacts] = useState([]);t
+  const [contacts, setContacts] = useState([]);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [filter, setFilter] = useState('');
