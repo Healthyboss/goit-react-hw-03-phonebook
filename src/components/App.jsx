@@ -13,18 +13,16 @@ function App() {
 
   useEffect(()=>{
     const localStorageContacts = localStorage.getItem('contacts');
-    console.log( 'raw contacts:',localStorageContacts );
-    
     if (localStorageContacts) {
       const parsedContacts = JSON.parse(localStorageContacts);
-      console.log('parsed contacts:', parsedContacts);
       setContacts(parsedContacts);
     }
   },[])
 
   useEffect(()=>{
-    console.log('Saving contacts to localStorage:', contacts);
+    if (contacts.length > 0) {
     localStorage.setItem('contact', JSON.stringify(contacts));
+    }
   }, [contacts])
   
   const addContact = (name, number) => {
@@ -45,8 +43,7 @@ function App() {
       name,
       number,
     };
-
-    console.log('Adding contact:', newContact);
+    
     setContacts([...contacts, newContact]);
 
   };  
