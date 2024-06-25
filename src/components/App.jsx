@@ -21,7 +21,7 @@ function App() {
 
   useEffect(()=>{
     if (contacts.length > 0) {
-    localStorage.setItem('contact', JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
     }
   }, [contacts])
   
